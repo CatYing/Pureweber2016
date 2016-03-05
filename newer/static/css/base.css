@@ -1,0 +1,95 @@
+body
+{
+
+	background-color: #eeeeee;
+}
+
+.section {
+    text-align: center;
+    font-family: "Microsoft YaHei UI";
+    color: #000;
+}
+
+@media (orientation: portrait) {
+    .form{
+        text-align:center;
+    }
+    input {
+        width: 80%;
+        margin:auto;
+    }
+    textarea{
+        width:80%;
+        margin:auto;
+    }
+}
+
+@media (orientation: landscape) {
+    input {
+        width:30%;
+        margin:auto;
+    }
+    textarea{
+        width:30%;
+        margin:auto;
+    }
+}
+
+h1{
+    font-size: 3em;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+h3 , a{
+    font-size: 1.3em;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+
+input {
+    margin-bottom: 20px;
+    display: block;
+    /*width:100%;*/
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555;
+    background-color: #FFF;
+    background-image: none;
+    opacity: 0.7;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+textarea{
+    margin-bottom: 20px;
+    display: block;
+    /*width:100%;*/
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    background-color: #FFF;
+    background-image: none;
+    opacity: 0.7;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+.btn-default {
+    background-color: #D9E0E0;
+    opacity: 0.7;
+}

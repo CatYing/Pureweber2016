@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Pureweber2016招新{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+        <div class="col-sm-12 table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>姓名</th>
+                        <th>学号</th>
+                        <th>学院</th>
+                        <th>电话</th>
+                        <th>QQ</th>
+                        <th>自我介绍</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for person in person_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ person.name }}</td>
+                        <td>{{ person.student_num }}</td>
+                        <td>{{ person.college }}</td>
+                        <td>{{ person.phone }}</td>
+                        <td>{{ person.qq }}</td>
+                        <td>{{ person.introduction }}</td>
+
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td>暂无报名</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

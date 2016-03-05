@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Pureweber2016招新{% endblock %}
+
+{% block content %}
+<div id="dowebok">
+    <div class="section">
+        <h1>Pureweber2016招新</h1>
+    </div>
+    <div class="section">
+        <h1>你来了</h1>
+        <h3>你看到了我</h3>
+        <h3>正如我也看到了你</h3>
+        <h3>看看你的上半学期</h3>
+        <h3>你可能在焦灼的看着你的Py或者C代码跑在黑框框里</h3>
+        <h3>你可能看着某博客上的成绩管理代码抄来抄去不知所云</h3>
+        <h3>你也不知道你学了一个学期，你掌握的东西能做些什么</h3>
+        <h3>或许你想用一个精美的页面来阐释你的心情，或者赢得TA的笑容</h3>
+        <h3>或许你想知道，这个页面是怎样做的……</h3>
+    </div>
+    <div class="section">
+        <h1>你的问题，我们来帮你解决！</h1>
+        <br>
+        <h3>如果你是汉子/女汉子/萌妹子</h3>
+        <h3>如果你想进入Web的世界</h3>
+        <h3>我们欢迎你的加入！</h3>
+    </div>
+
+    <div class="section section_form">
+        <h1>加入我们！</h1>
+        <br>
+        <div class="form">
+            <form method="post" id="data-form">
+                {% csrf_token %}
+                <input type="text" required name="name" placeholder="姓名">
+                <input type="text" required name="student_num" placeholder="学号">
+                <input type="text" required name="college" placeholder="学院">
+                <input type="text" required name="phone" placeholder="手机">
+                <input type="text" required name="qq" placeholder="QQ">
+                <textarea required name="introduction" placeholder="自我介绍"></textarea>
+                <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-md-offset-5 text-center">
+                        <button class="btn btn-default" id="submit-btn">报名</button>
+                    </div>
+                </div>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#submit-btn').click(function (e) {
+        e.preventDefault();
+        if('' != $('#id_phone').val()) {
+            $.ajax({
+                type: "POST",
+                dataType: 'json',
+                data: $('#data-form').serializeArray(),
+                url:'{% url "create_person_view" %}',
+                success:function(data){
+                    var state = data.state;
+                    if(state == 'success'){
+                        confirm("报名成功");
+                    } else {
+                        confirm("服务器拒绝了您的请求，还对您放了个屁");
+                    }
+                },
+                error: function(data){
+                    confirm("一定是你写的有问题！才不是程序猿的锅！");
+                    console.log(data);
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}
