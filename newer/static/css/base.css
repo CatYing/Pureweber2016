@@ -1,7 +1,13 @@
 body
 {
-
 	background-color: #eeeeee;
+}
+
+#header-base
+{
+    width: 100%;
+	background-color:#C1D735;
+	color:#fff;
 }
 
 .section {
@@ -10,30 +16,6 @@ body
     color: #000;
 }
 
-@media (orientation: portrait) {
-    .form{
-        text-align:center;
-    }
-    input {
-        width: 80%;
-        margin:auto;
-    }
-    textarea{
-        width:80%;
-        margin:auto;
-    }
-}
-
-@media (orientation: landscape) {
-    input {
-        width:30%;
-        margin:auto;
-    }
-    textarea{
-        width:30%;
-        margin:auto;
-    }
-}
 
 h1{
     font-size: 3em;

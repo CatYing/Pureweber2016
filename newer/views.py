@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from DjangoCaptcha import Captcha
 from django.http import JsonResponse
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -7,9 +6,9 @@ from django.views.generic import CreateView, ListView
 from models import *
 # Create your views here.
 
-def makeCode(req):
-    ca = Captcha(req)
 
+def index(request):
+    return render(request, 'slides.html')
 
 class AjaxableResponseMixin(object):
     def form_invalid(self, form):
@@ -37,7 +36,7 @@ class AjaxableResponseMixin(object):
 class CreatePersonView(AjaxableResponseMixin, CreateView):
     model = Person
     fields = ['name', 'student_num', 'college', 'phone', 'qq', 'introduction']
-    template_name = 'slides.html'
+    template_name = 'person_create_form.html'
     success_url = reverse_lazy('create_person_view')
 
 

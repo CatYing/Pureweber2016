@@ -28,20 +28,10 @@
 
     <div class="section section_form">
         <h1>加入我们！</h1>
-        <br>
-        <div class="form">
-            <form method="post" id="data-form">
-                {% csrf_token %}
-                <input type="text" required name="name" placeholder="姓名">
-                <input type="text" required name="student_num" placeholder="学号">
-                <input type="text" required name="college" placeholder="学院">
-                <input type="text" required name="phone" placeholder="手机">
-                <input type="text" required name="qq" placeholder="QQ">
-                <textarea required name="introduction" placeholder="自我介绍"></textarea>
                 <div class="container">
                 <div class="row">
                     <div class="col-md-2 col-md-offset-5 text-center">
-                        <button class="btn btn-default" id="submit-btn">报名</button>
+                        <button class="btn btn-default" id="submit-btn" type="button"><a href="/signup/" id="link">报名</a></button>
                     </div>
                 </div>
                 </div>
@@ -50,29 +40,11 @@
         </div>
     </div>
 </div>
+
 <script>
-    $('#submit-btn').click(function (e) {
-        e.preventDefault();
-        if('' != $('#id_phone').val()) {
-            $.ajax({
-                type: "POST",
-                dataType: 'json',
-                data: $('#data-form').serializeArray(),
-                url:'{% url "create_person_view" %}',
-                success:function(data){
-                    var state = data.state;
-                    if(state == 'success'){
-                        confirm("报名成功");
-                    } else {
-                        confirm("服务器拒绝了您的请求，还对您放了个屁");
-                    }
-                },
-                error: function(data){
-                    confirm("一定是你写的有问题！才不是程序猿的锅！");
-                    console.log(data);
-                }
-            });
-        }
-    });
+document.getElementById('submit-btn').onclick=function(){
+    document.getElementById('link').click();
+}
 </script>
+
 {% endblock %}
