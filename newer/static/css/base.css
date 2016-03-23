@@ -24,9 +24,11 @@ h1{
     margin-right: 10px;
 }
 
+h2{
+    color: white;
+}
 
-
-h3 , a{
+h3 {
     font-size: 1.3em;
     display: block;
     margin-left: 10px;
