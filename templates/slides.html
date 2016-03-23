@@ -1,50 +1,224 @@
-{% extends "base.html" %}
 {% load staticfiles %}
-{% block title %}Pureweber2016招新{% endblock %}
 
-{% block content %}
-<div id="dowebok">
-    <div class="section">
-        <h1>Pureweber2016招新</h1>
-    </div>
-    <div class="section">
-        <h1>你来了</h1>
-        <h3>你看到了我</h3>
-        <h3>正如我也看到了你</h3>
-        <h3>看看你的上半学期</h3>
-        <h3>你可能在焦灼的看着你的Py或者C代码跑在黑框框里</h3>
-        <h3>你可能看着某博客上的成绩管理代码抄来抄去不知所云</h3>
-        <h3>你也不知道你学了一个学期，你掌握的东西能做些什么</h3>
-        <h3>或许你想用一个精美的页面来阐释你的心情，或者赢得TA的笑容</h3>
-        <h3>或许你想知道，这个页面是怎样做的……</h3>
-    </div>
-    <div class="section">
-        <h1>你的问题，我们来帮你解决！</h1>
-        <br>
-        <h3>如果你是汉子/女汉子/萌妹子</h3>
-        <h3>如果你想进入Web的世界</h3>
-        <h3>我们欢迎你的加入！</h3>
-    </div>
 
-    <div class="section section_form">
-        <h1>加入我们！</h1>
-                <div class="container">
-                <div class="row">
-                    <div class="col-md-2 col-md-offset-5 text-center">
-                        <button class="btn btn-default" id="submit-btn" type="button"><a href="/signup/" id="link">报名</a></button>
-                    </div>
-                </div>
-                </div>
-            </form>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Pureweber2016招新</title>
+
+  <!--SEO Meta Tags-->
+  <meta name="description" content="Metheor - Multi-Purpose App Showcase Template" />
+  <meta name="keywords" content="multipurpose, app showcase, mobile, blog, business, corporate, startup, landing, shortcodes, html5, css3, jquery, js, gallery, slider, touch, creative" />
+  <meta name="author" content="Rokathemes" />
+
+  <!--Mobile Specific Meta Tag-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+  <link href="{% static "css/styles.min.css" %}" rel="stylesheet" media="screen">
+
+
+  <script src="{% static "js/modernizr.custom.js" %}"></script>
+
+  <!-- Page Preloader (Pace) -->
+  <script src="{% static "js/pace.min.js" %}"></script>
+</head>
+
+<!-- Body -->
+<!-- ".is-preloader" class is used for page preloading animation. Please note if you do not want preloading you need to remove this class along with pace.min.js link in the <head> of the document.-->
+<!-- Adding/Removing class ".parallax" is enabling/disabling background parallax effect on elements with background images and attributes data-stellar-background-ratio applied to them. Make sure you also added/removed link to stellar.js script before </body>. -->
+<body class="is-preloader parallax">
+
+  <!-- Page Wrapper -->
+  <div class="page-wrapper">
+
+    <!-- Navbar -->
+    <!-- Remove ".navbar-fixed" class to make navigation bar scrollable with the page. Another modifier calss is ".submenu-dark" to alter submenu appearance. -->
+    <header class="navbar navbar-fixed">
+      <div class="container">
+        <div class="inner">
+
+          <!-- Site Logo -->
+          <a href="#" class="site-logo">
+            <img src="{% static "img/logo3.png" %}" alt="Pureweber" width="30%" height="30%">
+          </a><!-- .site-logo -->
+
+          <!-- Mobile Dropdown -->
+          <div class="mobile-dropdown">
+
+            <!-- Mobile Tools -->
+            <div class="mobile-tools">
+              <form method="post" class="search-box">
+                <input type="text" placeholder="Enter your search query">
+                <button type="submit"><i class="pe-7s-search"></i></button>
+              </form><!-- .search-box -->
+              <div class="social-bar text-center">
+                <a href="#" class="sb-facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="sb-twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="sb-google-plus"><i class="fa fa-google-plus"></i></a>
+                <a href="#" class="sb-instagram"><i class="fa fa-instagram"></i></a>
+              </div><!-- .social-bar -->
+            </div><!-- .mobile-tools -->
+
+            <!-- Main Navigation -->
+            <nav class="main-navigation">
+              <ul class="menu">
+                <li>
+                  <a href="#">Programmers<span></span></a>
+                </li>
+                <li>
+                  <a href="#">Focus<span></span></a>
+                </li>
+                <li>
+                    <a href="#">on</a>
+                </li>
+                <li>
+                  <a href="#">Web</a>
+                </li>
+              </ul><!-- .menu -->
+            </nav><!-- .main-navigation -->
+          </div><!-- .mobile-dropdown -->
+
+          <!-- Toolbar -->
+
+          <!-- .toolbar -->
+        </div><!-- .inner -->
+      </div><!-- .container -->
+    </header><!-- .navbar.navbar-fixed -->
+
+    <!-- Intro Section -->
+    <section class="intro-section" style="background-image: url({% static "img/intro-bg01.jpg" %});" data-stellar-background-ratio="0.65">
+      <span class="overlay" style="opacity: .85;"></span>
+      <div class="container text-center">
+        <div class="intro-logo space-bottom">
+          <img src="{% static "img/logo4.png" %}" alt="Pureweber">
+        </div><!-- .intro-logo -->
+        <p class="text-light opacity-50">纯粹互联网</p>
+
+      </div><!-- .container -->
+
+      <!-- Remove class ".layer-parallax" to disable mouse parallax effect on screens. -->
+      <div class="intro-phone-wrap layer-parallax">
+        <div class="phone layer" data-depth="0.25">
+             <img src="{% static "img/phone.png" %}" alt="Phone">
+          <div class="screen">
+            <img src="{% static "img/screen1.jpg" %}" alt="Screen 1">
+          </div>
+        </div><!-- .phone -->
+        <div class="screen-first-right layer" data-depth="0.15">
+          <img src="{% static "img/screen2.jpg" %}" alt="Screen 2">
+        </div><!-- .screen-first-right -->
+        <div class="screen-first-left layer" data-depth="0.15">
+          <img src="{% static "img/screen3.jpg" %}" alt="Screen 3">
+        </div><!-- .screen-first-left -->
+      </div><!-- .intro-phone-wrap -->
+      <span class="inner-shadow"></span>
+    </section><!-- .intro-section -->
+
+    <!-- Market Buttons -->
+
+
+    <!-- Features -->
+    <section class="fw-section bg-white border-top padding-top-3x padding-bottom-3x">
+      <div class="container">
+        <h2 class="block-title text-center">关于
+          <small>你需要知道的事情</small>
+        </h2>
+        <div class="row">
+          <div class="col-sm-4">
+            <!-- Use ".light-skin" class to alter appearance. -->
+            <div class="box-with-icon text-center">
+
+              <h3 class="box-with-icon-title">我们是谁</h3>
+                <p>我们是PureWeber</p>
+                <p>纯粹的互联网爱好者与开发者</p>
+                <p>专注于网站设计与搭建</p>
+            </div><!-- .box-with-icon -->
+          </div><!-- .col-sm-4 -->
+          <div class="col-sm-4">
+            <!-- Use ".light-skin" class to alter appearance. -->
+            <div class="box-with-icon text-center">
+
+              <h3 class="box-with-icon-title">我们能帮助你</h3>
+              <p>自下而上的理解一个网站的组成</p>
+              <p>做出人生中第一个网站</p>
+              <p>甚至赚到第一桶金</p>
+            </div><!-- .box-with-icon -->
+          </div><!-- .col-sm-4 -->
+          <div class="col-sm-4">
+            <!-- Use ".light-skin" class to alter appearance. -->
+            <div class="box-with-icon text-center">
+
+              <h3 class="box-with-icon-title">加入我们，你能得到</h3>
+              <p>至少一台大屏幕显示器</p>
+              <p>四台空调的机房</p>
+              <p>学长学姐的指导</p>
+              <p>各个实习公司的内推名额</p>
+            </div><!-- .box-with-icon -->
+          </div><!-- .col-sm-4 -->
+        </div><!-- .row -->
+
+        <div class="row">
+            <div class="col-md-2 col-md-offset-5 text-center">
+                <button class="btn btn-default" id="submit-btn" type="button"><a href="/signup/" id="link" style="text-decoration: none;">报名</a></button>
+            </div>
         </div>
-        </div>
-    </div>
-</div>
 
-<script>
-document.getElementById('submit-btn').onclick=function(){
-    document.getElementById('link').click();
-}
-</script>
+      </div><!-- .container -->
+    </section>
 
-{% endblock %}
+
+
+
+    <!-- Scroll To Top Button -->
+    <a href="#" class="scroll-to-top-btn">
+      <i class="icon-arrow-up"></i>
+    </a><!-- .scroll-to-top-btn -->
+
+    <!-- Footer -->
+    <!-- Use modifier class ".footer-dark" to switch to dark skin. -->
+    <footer class="footer space-top-3x">
+      <div class="container">
+        <!-- Copyright -->
+        <div class="copyright">
+          <div class="inner">
+            <div class="column">
+              <a href="index.html" class="site-logo">
+                <img src="{% static "img/logo3.png" %}" alt="Metheor">
+              </a>
+              <span class="copy-text">&copy; 2016. All rights reserved</span>
+            </div><!-- .column -->
+            <div class="column">
+              <nav class="footer-nav">
+                <ul>
+                  <li>Powered by CatYing</li>
+                </ul>
+              </nav><!-- .footer-nav -->
+            </div><!-- .column -->
+          </div><!-- .inner -->
+        </div><!-- .copyright -->
+      </div><!-- .container -->
+    </footer><!-- .footer -->
+  </div><!-- .page-wrapper -->
+
+  <!-- JavaScript (jQuery) libraries, plugins and custom scripts -->
+  <script src="{% static "js/jquery-2.1.4.min.js" %}"></script>
+  <script src="{% static "js/bootstrap.min.js" %}"></script>
+  <script src="{% static "js/placeholder.js" %}"></script>
+  <script src="{% static "js/smoothscroll.js" %}"></script>
+  <script src="{% static "js/jquery.stellar.min.js" %}"></script>
+  <script src="{% static "js/velocity.min.js" %}"></script>
+  <script src="{% static "js/jquery.parallax.min.js" %}"></script>
+  <script src="{% static "js/magnific-popup.min.js" %}"></script>
+  <script src="{% static "js/owl.carousel.min.js" %}"></script>
+  <script src="{% static "js/scripts.js" %}"></script>
+  <script>
+      document.getElementById('submit-btn').onclick=function(){
+          document.getElementById('link').click();
+      };
+  </script>
+</body><!-- <body> -->
+
+</html>
